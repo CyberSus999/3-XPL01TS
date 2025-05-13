@@ -1,1 +1,5 @@
-
+Get contents of a URL- curl <URL>
+save to a file- curl -o <file/path/to/file.txt> <URL>
+download a file- curl -o <URL/to/download> .....can add custom name before URL
+handling redirections- curl -L <URL>
+and more...
