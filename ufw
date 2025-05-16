@@ -1,1 +1,42 @@
+sudo apt-get install -y ufw
 
+#always know its state/status
+sudo ufw status verbose
+or
+sudo ufw status numbered
+
+#enable/disable
+sudo ufw enable/disable
+
+#reset
+sudo ufw reset
+
+DEFAULT POLICIES
+#deny incoming connections-sudo ufw default deny incoming 
+#allow icoming- sudo ufw default allow outgoing
+#allow/deny ssh-sudo ufw allow ssh <port>
+#http/s - sudo ufw alloe/deny http...deny http and allow https
+
+#allow/deny from both
+sudo ufw allow proto tcp from any to any port 80,443
+
+#ftp
+sudo ufw deny 21/ftp
+
+#mySQL
+sudo ufw deny 3306
+sudo ufw deny proto tcp from any to any port 3306
+
+IP ADDRESSES
+always allow connections from default gateway
+
+sudo ufw allow from <default gateway>
+
+#ip to port number
+sudo ufw allow from <IP> to any port <port>
+
+#subnets
+sudo ufw allow from <subnet>
+
+
+DELETING RULES
